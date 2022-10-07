@@ -12,5 +12,10 @@ module.exports = (targetId,data = {
     }
 })=>{
     const target = document.getElementById(targetId);
-    target.tagName = "iframe";
+    const iframe = document.createElement('iframe');
+    target.insertAdjacentElement('beforebegin',iframe);
+    target.remove();
+    iframe.id = targetId;
+    let src = "http://tois-systems.net/embed/video/?id="+data.videoId;
+    if (data)
 }
