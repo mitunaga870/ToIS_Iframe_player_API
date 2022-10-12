@@ -8,5 +8,6 @@ ToIS.prototype.getCurrentTime = require('./func/getCurrentTime');
 ToIS.prototype.setCurrentTime = require('./func/setCurrentTime');
 ToIS.prototype.getVolume = require('./func/getVolume');
 ToIS.prototype.setVolume = require('./func/setVolume');
+ToIS.prototype.seekTo = require('./func/seekTo');
 
 module.exports = ToIS;
