@@ -22,7 +22,12 @@ function Make(targetId,data = {
     iframe.addEventListener('load',data.events.onReady);
     iframe.addEventListener('load',()=>{
         this.player = iframe.contentWindow.document.getElementById('stream');
-        this.player.addEventListener('ended',data.events.onStateChange);
+        this.player.addEventListener('ended',()=>{
+            const event = {
+                data: 0
+            }
+            data.events.onStateChange(event);
+        });
     });
     let src = "http://tois-systems.net/embed/video/?id="+data.videoId;
     if (data.playerVars.autoplay)
